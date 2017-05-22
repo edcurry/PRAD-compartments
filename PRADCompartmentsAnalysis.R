@@ -41,7 +41,7 @@ allcompartments.n <- load("PRADcompartmentsN.rda")
 # load DNAse-, H3K27ac-IP-, H3K27ac-IP-seq data and compare open/closed compartments
 
 require(rtracklayer)
-lncap.dnase.gr <- import("ENCODE_LNCap_DNase/LNCaP_ENCFF752YDY.bigWig")
+lncap.dnase.gr <- import("LNCaP_ENCFF752YDY.bigWig")
 allwindows.DHSscore <- sapply(allcompartments.t,function(x)sum(subsetByOverlaps(query=lncap.dnase.gr,subject=x)$score))
 par(mfrow=c(1,2))
 boxplot(list(open=allwindows.DHSscore[which(allcompartments.n$compartment=="open")],closed=allwindows.DHSscore[which(allcompartments.n$compartment=="closed")]),main="Normal Prostate Genome Compartments",ylab="LNCaP DNase-seq \n average normalized coverage")
