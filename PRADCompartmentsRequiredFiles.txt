@@ -1,0 +1,26 @@
+Compartment calling requires 'idat' files that can be downloaded from the TCGA legacy archive https://portal.gdc.cancer.gov/legacy-archive
+The following link should automatically set the correct filters to allow downloading the full set of required files: https://portal.gdc.cancer.gov/legacy-archive/search/f?filters={%22op%22:%22and%22,%22content%22:[{%22op%22:%22in%22,%22content%22:{%22field%22:%22cases.project.project_id%22,%22value%22:[%22TCGA-PRAD%22]}},{%22op%22:%22in%22,%22content%22:{%22field%22:%22files.data_category%22,%22value%22:[%22Raw%20microarray%20data%22]}},{%22op%22:%22in%22,%22content%22:{%22field%22:%22files.data_format%22,%22value%22:[%22idat%22]}}]}
+
+We have included a list of the tumour sample IDs (PRAD_Tumour_MethFilenames.txt) and normal sample IDs (PRAD_Normal_MethFilenames.txt) that are used in the accompanying script to select the appropriate idat files for processing.
+
+Alternatively, you can load precomputed compartment call objects into R, which we have included as 'PRADcompartmentsT.rda' and 'PRADcompartmentsN.rda'.
+
+LNCaP DNase-seq requires file 'ENCFF752YDY.bigWig' that can be downloaded by clicking the link (select hg19 processed data) at https://www.encodeproject.org/experiments/ENCSR000EPF/
+H3K27ac ChIP-seq peaks were downloaded from GEO https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1249448
+H3K27me3 ChIP-seq peaks were downloaded from GEO https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86532
+
+Copy-number profiles from TCGA samples can be downloaded as gene-level thresholded Gistic2 value from the UCSC Xena browser with the following link: https://xenabrowser.net/datapages/?dataset=TCGA.PRAD.sampleMap/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes&host=https://tcga.xenahubs.net
+
+Pathway enrichment testing requires table of Biological pathways (as defined by source databases) with their genes identified with gene symbol accession numbers, downloadable from http://cpdb.molgen.mpg.de/
+
+Transcription factor enrichment to aberrantly-compartmentalized regions requires ENCODE ChIP-seq narrowPeak bed files (hg19). These can be downloaded from https://www.encodeproject.org/matrix/?type=Experiment&replicates.library.biosample.donor.organism.scientific_name=Homo+sapiens&assembly=hg19&award.project=ENCODE&assay_title=ChIP-seq&target.investigated_as=transcription+factor&files.file_type=bed+narrowPeak
+
+We have included a list of the bed files used in this study, 'ENCODE_TFpeakCounts.txt'
+
+AR ChIPseq peak bed files are obtained from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65478
+
+TCGA PRAD gene expression (IlluminaHiSeq) can be downloaded from UCSC cancer browser https://genome-cancer.ucsc.edu/proj/site/hgHeatmap/ using the 'Add Datasets' button.
+
+
+
+
